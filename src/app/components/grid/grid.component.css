@@ -1,0 +1,27 @@
+.grid-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grid-caption {
+  white-space: nowrap;
+  font-size: calc((1.5vh + 1.5vw) / 2);
+}
+
+.grid {
+  border: 3px solid black;
+  border-spacing: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: start;
+}
+
+.tile {
+  height: calc((2vmax + 2vmin) / 2);
+  width: calc((2vmax + 2vmin) / 2);
+  background-color: white;
+  border: 1px solid lightgray;
+}

@@ -1,0 +1,11 @@
+<div class="grid-container">
+    <p class="grid-caption">{{caption}}</p>
+    <div class="grid">
+        <div class="row" *ngFor="let row of grid; let rowIndex = index">
+            <div class="tile" *ngFor="let tile of row; let colIndex = index"
+                [style.backgroundColor]="tile === -1 ? 'white' : colors[tile % colors.length]"
+                [style.border]="isTileToHighlight(rowIndex, colIndex) ? '1px solid green' : '1px solid lightgray'">
+            </div>
+        </div>
+    </div>
+</div>

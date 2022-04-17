@@ -1,0 +1,80 @@
+<div *ngIf="modalIndex === 0" class="modal">
+  <h1 class="modal-heading">Tetris</h1>
+  <p class="modal-subheading">
+    This tutorial will explain what this app is and walk you through the
+    features
+  </p>
+  <p class="modal-text">
+    You can jump in immediately by pressing "skip tutorial", or click "next" to
+    access the next portion of the tutorial
+  </p>
+
+  <img src="assets/screenshot.png" class="modal-image" />
+  <button (click)="onHide()" class="finish-tutorial">Close Tutorial</button>
+  <button (click)="nextModal()" class="next-page">Next</button>
+</div>
+
+<div *ngIf="modalIndex === 1" class="modal">
+  <h1 class="modal-heading">Controls</h1>
+  <p class="modal-subheading"><strong>PC:</strong></p>
+  <p class="modal-text">Hold Block: Press the 'h' key</p>
+  <p class="modal-text">Rotate Block: Press the up arrow key</p>
+  <p class="modal-text">Shift Block: Press the corresponding arrow key</p>
+  <p class="modal-text">Drop Block: Press the spacebar</p>
+
+  <p class="modal-subheading"><strong>Mobile:</strong></p>
+  <p class="modal-text">Use the buttons at the bottom of the screen</p>
+
+  <button (click)="onHide()" class="finish-tutorial">Close Tutorial</button>
+  <button (click)="prevModal()" class="prev-page">Prev</button>
+  <button (click)="nextModal()" class="next-page">Next</button>
+</div>
+
+<div *ngIf="modalIndex === 2" class="modal">
+  <h1 class="modal-heading">Changing the Speed</h1>
+  <p class="modal-text">
+    The value under the "Drop Delay" menu item represents the amount of time the
+    game will wait between letting the block fall another bit
+  </p>
+  <p class="modal-text">
+    You can use the slider to adjust this waiting time in milliseconds
+  </p>
+
+  <p class="modal-text">
+    A smaller value will mean that there's less time between the block falling,
+    making it fall faster
+  </p>
+
+  <button (click)="onHide()" class="finish-tutorial">Close Tutorial</button>
+  <button (click)="prevModal()" class="prev-page">Prev</button>
+  <button (click)="nextModal()" class="next-page">Next</button>
+</div>
+
+<div *ngIf="modalIndex === 3" class="modal">
+  <h1 class="modal-heading">AI</h1>
+  <p class="modal-text">
+    If enabled, the AI will automatically decide where to put the block and how
+    to rotate it. This can be easily overriden using the game controls
+  </p>
+
+  <p class="modal-text">
+    You can toggle the AI using the toggle switch in the top left corner
+  </p>
+
+  <button (click)="onHide()" class="finish-tutorial">Close Tutorial</button>
+  <button (click)="prevModal()" class="prev-page">Prev</button>
+  <button (click)="nextModal()" class="next-page">Next</button>
+</div>
+
+<div *ngIf="modalIndex === 4" class="modal">
+  <h1 class="modal-heading">That's all folks!</h1>
+  <p class="modal-subheading">
+    If you enjoyed you can check out the code on
+    <a href="https://github.com/MarkLee7916/Tetris-with-AI-Angular">GitHub</a>
+  </p>
+
+  <img src="assets/code.png" class="modal-image" />
+  <button (click)="onHide()" class="finish-tutorial">Close Tutorial</button>
+  <button (click)="prevModal()" class="prev-page">Prev</button>
+  <button (click)="onHide()" id="finish-final-modal">Finish</button>
+</div>

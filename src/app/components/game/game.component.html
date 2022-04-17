@@ -1,0 +1,33 @@
+<div>
+    <div id="main-content" [style.opacity]="isTutorialVisible ? '0.1' : '1'">
+        <app-menu [lineClearCount]=" lineClearCount" [(dropDelay)]="dropDelay" (resetGameEmit)="resetGame()"
+            (showTutorialEmit)="showTutorial()" (toggleAIEmit)="toggleAI()" [isAIRunning]="isAIRunning">
+        </app-menu>
+
+        <div id="game-content">
+            <app-grid caption="Holding Block" [grid]="mapTetriminoToPreviewGrid(holdingTetrimino)"
+                [tilesToHighlight]="[]">
+            </app-grid>
+            <app-grid [caption]="mainGridCaption" [grid]="mapTetriminoToMainGrid()" [tilesToHighlight]="getCoordsToHighlight()">
+            </app-grid>
+            <app-grid caption="Next Block" [grid]="mapTetriminoToPreviewGrid(nextTetrimino)" [tilesToHighlight]="[]">
+            </app-grid>
+        </div>
+
+        <app-mobile-controls 
+            *ngIf="isTouchscreen"
+            (holdEmit)="swapWithHoldingTetrimino()"
+            (dropEmit)="floorCurrentTetrimino()"
+            (rotateEmit)="rotateCurrentTetrimino()"
+            (shiftLeftEmit)="shiftCurrentTetriminoLeft()"
+            (shiftRightEmit)="shiftCurrentTetriminoRight()"
+            (shiftDownEmit)="shiftCurrentTetriminoDown()"
+        >
+        
+        </app-mobile-controls>
+    </div>
+
+    <app-tutorial *ngIf="isTutorialVisible" (hideEmit)="hideTutorial()">
+
+    </app-tutorial>
+</div>

@@ -1,0 +1,31 @@
+<div id="menu">
+  <div class="slider-container">
+    <span class="invisible-text slider-label">Place Hold</span>
+
+    <input
+      (change)="onToggleAI()"
+      class="range toggle-switch"
+      type="range"
+      min="0"
+      max="1"
+    />
+
+    <span class="slider-label">
+      {{ isAIRunning ? "Disable AI" : "Enable AI" }}
+    </span>
+  </div>
+  <button (click)="onResetGame()">Reset Game</button>
+  <button (click)="onShowTutorial()">Tutorial</button>
+  <div class="slider-container">
+    <span class="slider-label">Drop Delay</span>
+    <input
+      (input)="onInputChange($event)"
+      min="0"
+      max="2000"
+      type="range"
+      class="range slider"
+    />
+    <span class="slider-label">{{ dropDelay }}ms</span>
+  </div>
+  <span>Line Clears: {{ lineClearCount }}</span>
+</div>
